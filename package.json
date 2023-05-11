@@ -1,0 +1,33 @@
+{
+  "name": "spotevent",
+  "version": "1.0.0",
+  "description": "## Team 7 10am",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Error: no build specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/kenjinakachi/lyriccheck.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/kenjinakachi/lyriccheck/issues"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.29.4",
+    "prettier": "2.5.1"
+  },
+  "homepage": "https://gitlab.com/kenjinakachi/lyriccheck#readme",
+  "dependencies": {
+    "cli-progress": "^3.10.0"
+  }
+}

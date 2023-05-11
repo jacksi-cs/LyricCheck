@@ -1,0 +1,22 @@
+{
+  "name": "get-song-model",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "last.fm.api": "^0.1.3",
+    "line-by-line": "^0.1.6",
+    "musixmatch-node": "^1.0.2",
+    "node-fetch": "^3.2.0",
+    "perspective-api-client": "^3.1.0",
+    "spotify-web-api-node": "^5.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

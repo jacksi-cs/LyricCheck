@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering components + snapshots renders About component without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders AboutLyricCheck without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders Artist component without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders ArtistRankings component without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders Country component without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders CountryRankings component without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders Footer without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders Navigation navbar without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders Song component without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders SongRankings component without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders all Home component Carousel.Caption without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders filtered artist without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders filtered countries without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders filtered songs without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders searched artist without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders searched countries without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders searched songs without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders sorted artist without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders sorted countries without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`rendering components + snapshots renders sorted songs without crashing 1`] = `ShallowWrapper {}`;

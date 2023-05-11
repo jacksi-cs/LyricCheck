@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+p {
+  font-family: "Helvetica Neue";
+}
+
+nav.navbar {
+  height: 50px;
+  background-color: rgb(247, 202, 77);
+}
+
+.carousel-inner {
+  height: calc(100vh - 50px);
+}
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 50px);
+}
+
+.row {
+  padding: 5px;
+}
+
+.card-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool-img {
+  width: 125px;
+  height: auto;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Courier New";
+}
+
+.bg-transparent {
+  background-color: rgba(229, 228, 228, 0) !important;
+}
+
+
+.card {
+  border-color: rgb(144, 144, 144) !important;
+}
+
+.card-body {
+  background-color: rgb(246, 246, 246) !important;
+}
+
+.card-footer {
+  background-color: rgb(218, 218, 218) !important;
+}
+
+.accordion-item {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.accordion-button {
+  background-color: rgb(246, 246, 246) !important;
+}
+
+
+.MuiDataGrid-columnHeaders {
+  background-color: rgb(246, 246, 246) !important;
+}
+
+.MuiDataGrid-cell {
+  border-color: rgb(144, 144, 144) !important;
+}
+
+.MuiFormControl-root {
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+  outline: none !important;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}

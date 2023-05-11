@@ -1,0 +1,501 @@
+{
+  "info": {
+    "_postman_id": "75fb3a5c-f3c2-4542-9507-0b93f78da36a",
+    "name": "LyricCheck Api Documentation",
+    "description": "# Introduction\n\nWhat does your API do?  \nReturns information on top artists, top songs, and countries for the purpose of determining their top profanity scores. Users can know which countries, songs, or artists have the highest profanity scores.\n\n# Overview\n\nThings that the developers should know about  \n/songs /artists /countries alone returns a list of the model, you can filter and search by specific values in those.  \n/songs:id /artists:id /countries:id returns a singular model, so you can search for one song/artist/country. e.g. songs/008977a9-ba2d-448f-8983-8d536ea0ef53 would output all the data for Satisfy My Soul by Bob Marley.\n\n# Authentication\n\nWhat is the preferred way of using the API?  \nThe api is public and for free use under legal copyright.\n\n# Error Codes\n\nWhat errors and status codes can a user expect?  \nUsers can expect the standard http status codes. e.g. 400's, 500's, 300's.\n\n# Rate limit\n\nIs there a limit to the number of requests a user can send?  \nThere is no hard limit, but we ask the user not to abuse our free database.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "countries",
+      "item": [
+        {
+          "name": "Search for a single country.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"https://api.lyriccheck.me/countries/HK test\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.ok;\r",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://api.lyriccheck.me/countries/:id",
+              "protocol": "https",
+              "host": ["api", "lyriccheck", "me"],
+              "path": ["countries", "HK"],
+              "variable": [
+                {
+                  "description": "The id (code) of the country.",
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Searches for a country with the id."
+          },
+          "response": [
+            {
+              "name": "Search for a single country.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.lyriccheck.me/countries/HK",
+                  "protocol": "https",
+                  "host": ["api", "lyriccheck", "me"],
+                  "path": ["countries", "HK"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "644"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 01 Mar 2022 02:36:47 GMT"
+                },
+                {
+                  "key": "Last-Modified",
+                  "value": "Tue, 01 Mar 2022 01:52:34 GMT"
+                },
+                {
+                  "key": "ETag",
+                  "value": "\"89f84a38535f91d2984063a982a703b3\""
+                },
+                {
+                  "key": "x-amz-server-side-encryption",
+                  "value": "AES256"
+                },
+                {
+                  "key": "Accept-Ranges",
+                  "value": "bytes"
+                },
+                {
+                  "key": "Server",
+                  "value": "AmazonS3"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, s-maxage=2"
+                },
+                {
+                  "key": "X-Cache",
+                  "value": "Miss from cloudfront"
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 0d295dc6f41daf46fd96a295075f9206.cloudfront.net (CloudFront)"
+                },
+                {
+                  "key": "X-Amz-Cf-Pop",
+                  "value": "ORD53-C2"
+                },
+                {
+                  "key": "X-Amz-Cf-Id",
+                  "value": "8PDXu5rVbqgri_PwtlDzNJZAcfpb2iQ4uBQsfN57vw5hrVX2m2LhgA=="
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"data\": {\n    \"attributes\": {\n      \"continents\": [\"Asia\"],\n      \"country_code\": \"HK\",\n      \"flags_svg\": \"https://flagcdn.com/hk.svg\",\n      \"languages\": [\"English\", \"Chinese\"],\n      \"name_common\": \"Hong Kong\",\n      \"name_official\": \"Hong Kong Special Administrative Region of the People's Republic of China\",\n      \"profanity_average\": 0.3056373655113636,\n      \"profanity_identity_attack\": 0.396942305,\n      \"profanity_profanity\": 0.1834379915909091,\n      \"profanity_sexually_explicit\": 0.32108458272727264,\n      \"profanity_toxicity\": 0.32108458272727264,\n      \"region\": \"Asia\",\n      \"subregion\": \"Eastern Asia\",\n      \"top_artists_ids\": [\n        \"cc197bad-dc9c-440d-a5b5-d52ba2e14234\",\n        \"cc2c9c3c-b7bc-4b8b-84d8-4fbd8779e493\",\n        \"b8a7c51f-362c-4dcb-a259-bc6e0095f0a6\",\n        \"c8b03190-306c-4120-bb0b-6f2ebfc06ea9\",\n        \"0ab49580-c84f-44d4-875f-d83760ea2cfe\",\n        \"a74b1b7f-71a5-4011-9441-d0b5e4122711\",\n        \"2f548675-008d-4332-876c-108b0c7ab9c5\",\n        \"db36a76f-4cdf-43ac-8cd0-5e48092d2bae\",\n        \"f4fdbb4c-e4b7-47a0-b83b-d91bbfcfa387\",\n        \"b7539c32-53e7-4908-bda3-81449c367da6\",\n        \"8dd98bdc-80ec-4e93-8509-2f46bafc09a7\",\n        \"b49b81cc-d5b7-4bdd-aadb-385df8de69a6\",\n        \"33ca19f4-18c8-4411-98df-ac23890ce9f5\",\n        \"b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d\",\n        \"e0140a67-e4d1-4f13-8a01-364355bee46e\",\n        \"86119d30-d930-4e65-a97a-e31e22388166\",\n        \"056e4f3e-d505-4dad-8ec1-d04f521cbb56\",\n        \"afb680f2-b6eb-4cd7-a70b-a63b25c763d5\",\n        \"5441c29d-3602-4898-b1a1-b77fa23b8e50\",\n        \"20244d07-534f-4eff-b4d4-930878889970\",\n        \"650e7db6-b795-4eb5-a702-5ea2fc46c848\",\n        \"012151a8-0f9a-44c9-997f-ebd68b5389f9\",\n        \"5a85c140-dcf9-4dd2-b2c8-aff0471549f3\",\n        \"91a81925-92f9-4fc9-b897-93cf01226282\",\n        \"859d0860-d480-4efd-970c-c05d5f1776b8\",\n        \"8e494408-8620-4c6a-82c2-c2ca4a1e4f12\",\n        \"420ca290-76c5-41af-999e-564d7c71f1a7\",\n        \"122d63fc-8671-43e4-9752-34e846d62a9c\",\n        \"302bd7b9-d012-4360-897a-93b00c855680\",\n        \"75be165a-ad83-4d12-bd28-f589a15c479f\",\n        \"b7d92248-97e3-4450-8057-6fe06738f735\",\n        \"c33c2065-b1c3-4406-b066-d33a9e2ea71a\",\n        \"75a72702-a5ef-4513-bca5-c5b944903546\",\n        \"f27ec8db-af05-4f36-916e-3d57f91ecf5e\",\n        \"596ffa74-3d08-44ef-b113-765d43d12738\",\n        \"164f0d73-1234-4e2c-8743-d77bf2191051\",\n        \"ba0e7638-0cd6-4ff4-8987-c3e224d22c23\",\n        \"b95ce3ff-3d05-4e87-9e01-c97b66af13d4\",\n        \"525f1f1c-03f0-4bc8-8dfd-e7521f87631b\",\n        \"e4bc69e2-a064-4f93-ada1-f7f209cc1cc3\",\n        \"494e8d09-f85b-4543-892f-a5096aed1cd4\",\n        \"ecf9f3a3-35e9-4c58-acaa-e707fba45060\",\n        \"c85cfd6b-b1e9-4a50-bd55-eb725f04f7d5\",\n        \"8ef1df30-ae4f-4dbd-9351-1a32b208a01e\",\n        \"8a81edd9-6f62-4ac7-afee-17dc0fec5fe7\",\n        \"45a663b5-b1cb-4a91-bff6-2bef7bbfdd76\",\n        \"5fee3020-513b-48c2-b1f7-4681b01db0c6\",\n        \"b4691384-50c3-4afd-9988-51d3ec5db65d\",\n        \"c5c2ea1c-4bde-4f4d-bd0b-47b200bf99d6\"\n      ],\n      \"top_artists_names\": [\n        \"Coldplay\",\n        \"Adele\",\n        \"Ed Sheeran\",\n        \"The Weeknd\",\n        \"Maroon 5\",\n        \"Radiohead\",\n        \"Sia\",\n        \"Rihanna\",\n        \"Ariana Grande\",\n        \"Lana Del Rey\",\n        \"Calvin Harris\",\n        \"Drake\",\n        \"Ellie Goulding\",\n        \"The Beatles\",\n        \"Justin Bieber\",\n        \"\\u9673\\u5955\\u8fc5\",\n        \"Daft Punk\",\n        \"Bruno Mars\",\n        \"David Bowie\",\n        \"Taylor Swift\",\n        \"Lady Gaga\",\n        \"Imagine Dragons\",\n        \"Sam Smith\",\n        \"The Chainsmokers\",\n        \"Beyonc\\u00e9\",\n        \"Lorde\",\n        \"Queen\",\n        \"Katy Perry\",\n        \"David Guetta\",\n        \"Major Lazer\",\n        \"Shawn Mendes\",\n        \"OneRepublic\",\n        \"John Legend\",\n        \"Michael Jackson\",\n        \"Justin Timberlake\",\n        \"Kanye West\",\n        \"Kygo\",\n        \"Eminem\",\n        \"Charlie Puth\",\n        \"Selena Gomez\",\n        \"Mariah Carey\",\n        \"Oasis\",\n        \"Avicii\",\n        \"Alicia Keys\",\n        \"John Mayer\",\n        \"Britney Spears\",\n        \"Billie Eilish\",\n        \"Florence + the Machine\",\n        \"Hozier\",\n        \"The xx\"\n      ],\n      \"top_tracks_ids\": [\n        \"cb2cc207-8125-445c-9ef9-6ea44eee959a\",\n        \"7dcbc1be-4257-4d64-b915-045dfb23ae88\",\n        \"8b5bf478-22f8-4902-a1c1-0db82261db58\",\n        \"2e26fe2b-9f4d-4efa-96a4-d13de78cacac\",\n        \"13f5488d-8e41-42d8-9fe9-a5295f1a9a3d\",\n        \"1a13c710-4b7e-4701-8968-cd61f2e58110\",\n        \"3af0af54-9c93-4578-9128-d04054286ba3\",\n        \"ea4a91be-8a34-47de-8bcd-f5a75aec048c\",\n        \"a5a2330e-2fff-4601-a715-6e68a8e98fbf\",\n        \"a6fab057-cf3a-4456-950e-d3edaf219326\",\n        \"48850913-4586-47ab-ab63-9a70209de0f0\",\n        \"4d507ca4-0d95-494c-b97b-e2fa50c926c1\",\n        \"6cbbb97d-2180-4ba9-97a8-6158b6332bb4\",\n        \"2b4c7de6-bfaa-456a-9465-247ece2e9052\",\n        \"3dcdd899-eb81-482d-b495-45ec72c2d94e\",\n        \"11a32de6-bce4-4c8a-aac7-849996f3ecd6\",\n        \"d11fcceb-dfc5-4d19-b45d-f4e8f6d3eaa6\",\n        \"6f1b86fd-279a-4672-9161-fefb7d000db1\",\n        \"bb76dcf3-9b37-4b75-98e5-5689e24d528f\",\n        \"1682cf55-a9a6-429c-a7f0-ff756781570a\",\n        \"37d516ab-d61f-4bcb-9316-7a0b3eb845a8\",\n        \"d1e0a99e-1894-457b-ba6a-985eeef4d0c4\",\n        \"773a1557-a974-4f1e-978e-c240be4c3cb8\",\n        \"f6491f93-5322-4750-bbca-cf438187e649\",\n        \"c9bf13e6-619e-4cca-ae0f-512e9a478930\"\n      ],\n      \"top_tracks_names\": [\n        \"Hello\",\n        \"Cant Feel My Face\",\n        \"Thinking Out Loud\",\n        \"Photograph\",\n        \"Yellow\",\n        \"Someone Like You\",\n        \"Shape of You\",\n        \"The Scientist\",\n        \"Rolling in the Deep\",\n        \"Send My Love (To Your New Lover)\",\n        \"When We Were Young\",\n        \"Fix You\",\n        \"Sugar\",\n        \"Sorry\",\n        \"Cheap Thrills\",\n        \"What Do You Mean?\",\n        \"Love Yourself\",\n        \"Im Yours\",\n        \"All I Want for Christmas Is You\",\n        \"Stay with Me\",\n        \"Chandelier\",\n        \"Hotline Bling\",\n        \"Viva la Vida\",\n        \"bad guy\",\n        \"Take Me to Church\",\n        \"Faded\",\n        \"Make You Feel My Love\",\n        \"Adventure Of A Lifetime\",\n        \"All of Me\",\n        \"Creep\",\n        \"Starboy\",\n        \"Royals\",\n        \"Closer\",\n        \"Something Just Like This\",\n        \"The Hills\",\n        \"Im Not the Only One\",\n        \"Let Her Go\",\n        \"The Less I Know the Better\",\n        \"We Dont Talk Anymore (feat. Selena Gomez)\",\n        \"Lean On (feat. M\\u00d8 & DJ Snake)\",\n        \"Mr. Brightside\",\n        \"Water Under The Bridge\",\n        \"Perfect\",\n        \"Set Fire to the Rain\",\n        \"24K Magic\",\n        \"Cake By The Ocean\",\n        \"Stitches\",\n        \"Intro\",\n        \"Last Christmas\",\n        \"Take on Me\"\n      ]\n    },\n    \"id\": \"HK\",\n    \"type\": \"countries\"\n  },\n  \"jsonapi\": { \"version\": \"1.0\" }\n}\n"
+            }
+          ]
+        },
+        {
+          "name": "List countries with filter/search.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"https://api.lyriccheck.me/countries test\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.ok;\r",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://api.lyriccheck.me/countries?filter[object]&sort&page[number]",
+              "protocol": "https",
+              "host": ["api", "lyriccheck", "me"],
+              "path": ["countries"],
+              "query": []
+            },
+            "description": "Returns a list of countries that match the filters. If no filters are specified, returns all countries paginated."
+          },
+          "response": [
+            {
+              "name": "List countries with filter/search.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.lyriccheck.me/countries",
+                  "protocol": "https",
+                  "host": ["api", "lyriccheck", "me"],
+                  "path": ["countries"]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": null,
+              "cookie": [],
+              "body": "{\n  \"data\": [\n    {\n      \"attributes\": {\n        \"continents\": [\"Europe\"],\n        \"country_code\": \"AD\",\n        \"flags_svg\": \"https://flagcdn.com/ad.svg\",\n        \"languages\": [\"Catalan\"],\n        \"name_common\": \"Andorra\",\n        \"name_official\": \"Principality of Andorra\",\n        \"profanity_average\": 0.3436246117321428,\n        \"profanity_identity_attack\": 0.41568298880952376,\n        \"profanity_profanity\": 0.25740044192857137,\n        \"profanity_sexually_explicit\": 0.35070750809523804,\n        \"profanity_toxicity\": 0.35070750809523804,\n        \"region\": \"Europe\",\n        \"subregion\": \"Southern Europe\",\n        \"top_artists_ids\": [\n          \"a74b1b7f-71a5-4011-9441-d0b5e4122711\",\n          \"63aa26c3-d59b-4da4-84ac-716b54f1ef4d\",\n          \"6a65d878-fcd0-42cf-aff9-ca1d636a8bcc\",\n          \"b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d\",\n          \"c8b03190-306c-4120-bb0b-6f2ebfc06ea9\",\n          \"8bfac288-ccc5-448d-9573-c33ea2aa5c30\",\n          \"9282c8b4-ca0b-4c6b-b7e3-4f7762dfc4d6\",\n          \"8538e728-ca0b-4321-b7e5-cff6565dd4c0\",\n          \"c5c2ea1c-4bde-4f4d-bd0b-47b200bf99d6\",\n          \"83b9cbe7-9857-49e2-ab8e-b57b01038103\",\n          \"ea4dfa26-f633-4da6-a52a-f49ea4897b58\",\n          \"cc197bad-dc9c-440d-a5b5-d52ba2e14234\",\n          \"ada7a83c-e3e1-40f1-93f9-3e73dbc9298a\",\n          \"83d91898-7763-47d7-b03b-b92132375c47\",\n          \"5441c29d-3602-4898-b1a1-b77fa23b8e50\",\n          \"420ca290-76c5-41af-999e-564d7c71f1a7\",\n          \"d6e0e274-8e19-44ce-b5b2-52c12f8a674a\",\n          \"69ee3720-a7cb-4402-b48d-a02c366f2bcf\",\n          \"cc2c9c3c-b7bc-4b8b-84d8-4fbd8779e493\",\n          \"b071f9fa-14b0-4217-8e97-eb41da73f598\",\n          \"7dc8f5bd-9d0b-4087-9f73-dc164950bbd8\",\n          \"a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432\",\n          \"ba0d6274-db14-4ef5-b28d-657ebde1a396\",\n          \"c44ff8d1-8c81-45c8-abd6-5feefb07b764\",\n          \"bd13909f-1c29-4c27-a874-d4aaf27c5b1a\",\n          \"10adbe5e-a2c0-4bf3-8249-2b4cbf6e6ca8\",\n          \"9a58fda3-f4ed-4080-a3a5-f457aac9fcdd\",\n          \"8dd98bdc-80ec-4e93-8509-2f46bafc09a7\",\n          \"fc7bbf00-fbaa-4736-986b-b3ac0266ca9b\",\n          \"6d7b7cd4-254b-4c25-83f6-dd20f98ceacd\",\n          \"8970d868-0723-483b-a75b-51088913d3d4\",\n          \"f1106b17-dcbb-45f6-b938-199ccfab50cc\",\n          \"2aaf7396-6ab8-40f3-9776-a41c42c8e26b\",\n          \"2944824d-4c26-476f-a981-be849081942f\",\n          \"cd8c5019-5d75-4d5c-bc28-e1e26a7dd5c8\",\n          \"65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab\",\n          \"e21857d5-3256-4547-afb3-4b6ded592596\",\n          \"f181961b-20f7-459e-89de-920ef03c7ed0\",\n          \"b8a7c51f-362c-4dcb-a259-bc6e0095f0a6\",\n          \"437a0e49-c6ae-42f6-a6c1-84f25ed366bc\",\n          \"b6b2bb8d-54a9-491f-9607-7b546023b433\",\n          \"ba853904-ae25-4ebb-89d6-c44cfbd71bd2\",\n          \"a8baaa41-50f1-4f63-979e-717c14979dfb\",\n          \"a16371b9-7d36-497a-a9d4-42b0a0440c5e\",\n          \"fa34b363-79df-434f-a5b8-be4e6898543f\",\n          \"e105c272-b5d7-4135-82ef-d60bded54345\",\n          \"7c7f9c94-dee8-4903-892b-6cf44652e2de\",\n          \"87b9b3b8-ab93-426c-a200-4012d667a626\",\n          \"e07a111e-4e8a-4651-a849-01ac60551ab2\",\n          \"b7539c32-53e7-4908-bda3-81449c367da6\"\n        ],\n        \"top_artists_names\": [\n          \"Radiohead\",\n          \"Tame Impala\",\n          \"Foals\",\n          \"The Beatles\",\n          \"The Weeknd\",\n          \"Red Hot Chili Peppers\",\n          \"Nirvana\",\n          \"Depeche Mode\",\n          \"The xx\",\n          \"Pearl Jam\",\n          \"R.E.M.\",\n          \"Coldplay\",\n          \"Arctic Monkeys\",\n          \"Pink Floyd\",\n          \"David Bowie\",\n          \"Queen\",\n          \"Led Zeppelin\",\n          \"The Cure\",\n          \"Adele\",\n          \"The Rolling Stones\",\n          \"Queens of the Stone Age\",\n          \"U2\",\n          \"The Smashing Pumpkins\",\n          \"Interpol\",\n          \"Fleetwood Mac\",\n          \"Massive Attack\",\n          \"Joy Division\",\n          \"Calvin Harris\",\n          \"alt-J\",\n          \"M83\",\n          \"Moby\",\n          \"New Order\",\n          \"LCD Soundsystem\",\n          \"Nina Simone\",\n          \"Jos\\u00e9 Gonz\\u00e1lez\",\n          \"Metallica\",\n          \"Gorillaz\",\n          \"The Strokes\",\n          \"Ed Sheeran\",\n          \"Bon Iver\",\n          \"Pixies\",\n          \"Blur\",\n          \"Beck\",\n          \"Slowdive\",\n          \"Ludovico Einaudi\",\n          \"The Wombats\",\n          \"Tears for Fears\",\n          \"The War on Drugs\",\n          \"Kurt Vile\",\n          \"Lana Del Rey\"\n        ],\n        \"top_tracks_ids\": [\n          \"d11fcceb-dfc5-4d19-b45d-f4e8f6d3eaa6\",\n          \"0790ba6c-e0b1-4891-b82f-b4db9a5a927f\",\n          \"f1e57531-e0df-4b3e-938f-1ae30c5b1a11\",\n          \"0ebe2d92-a11d-4b2b-9922-806383074ed7\",\n          \"d758947d-d667-430b-900d-2abb110f63aa\",\n          \"24cc8311-98fd-423a-bed1-97728f5eabc5\",\n          \"436a7933-e085-4a33-acd5-351c18788ad3\",\n          \"773a1557-a974-4f1e-978e-c240be4c3cb8\",\n          \"980a426e-623e-4ea5-98c7-008d037a0508\",\n          \"d201070b-ff15-49ce-877b-f91032617faf\",\n          \"f3886ee8-6025-4fda-800b-f9572acd003b\",\n          \"c0c78d3e-19fc-4227-bdbb-153814f05527\",\n          \"e4830d6d-af02-420c-a352-e170fc3ffa7c\",\n          \"3103a81a-b262-439c-889f-8f4039cd4150\",\n          \"e83bc6ba-eff9-412c-8c11-5153672f25e7\",\n          \"009f7e7b-5ecf-4cef-a2c1-0f0c736e807e\",\n          \"28565ecb-6f65-4f57-ab7f-1846d643c1d7\",\n          \"04233db6-f991-4fb2-bef9-813f95a0bf30\",\n          \"04ea96b6-f5b7-49a5-98b1-97f4ae55dee7\",\n          \"04a4ac3e-5439-4214-8094-b63f756613ea\",\n          \"60bd9d53-01ff-4562-8058-eb44b3940317\",\n          \"5935ec91-8124-42ff-937f-f31a20ffe58f\",\n          \"81731a05-609e-472c-a2b6-186dcdded5a6\",\n          \"a6f39162-031e-47b8-8620-c7770dcd5f0b\",\n          \"6d19aaa7-1eb5-4488-a54d-fe07d0621a7f\",\n          \"cbec6fa8-a950-471d-b92e-f0c39255f488\",\n          \"52012588-8dca-4976-80f1-60c5522d93a9\",\n          \"70f8ece5-1c77-4ab7-84ad-1e863aa8eb65\",\n          \"42f728f2-3811-43af-a3d0-f651056b5bb9\",\n          \"52e23250-a19c-49da-ae4e-76a17966742a\",\n          \"fadbe375-792c-43cb-98c2-376bd1625979\",\n          \"64745b72-5bc8-43a9-a2a3-0d20afd42d5d\",\n          \"4e46d449-e549-4f53-babb-5fe492a87cc8\",\n          \"10d1062a-7275-458f-ad0d-906eeaa22c57\",\n          \"3f5647db-6f12-4c36-94ea-2d06f2c7e8f9\",\n          \"7a3e8796-a0b3-4999-b268-4e2d47912e3c\",\n          \"5cbb546d-5c1c-490e-9908-761b89dd5166\",\n          \"df761b66-c829-4646-877f-3ab0862209f0\",\n          \"7cee7c85-7ac9-4a9d-b7de-01dabe99a07a\",\n          \"1e73e7a6-7378-46e5-97a7-2c299c656a29\",\n          \"8d9104c6-7d8e-460b-8c3d-2d797f79953d\",\n          \"74bbaf1e-220c-4329-b494-bcfd7da17ec0\",\n          \"8b6d9029-1990-4660-bd57-24b5bc0fb626\",\n          \"721fb79e-0189-4690-bee9-8910c8184fc9\",\n          \"aa9cdaf8-b8f4-42ad-92a3-d0c3d66bfcb1\",\n          \"bd661ba8-2ebc-496b-894f-063c74816576\"\n        ],\n        \"top_tracks_names\": [\n          \"Creep\",\n          \"Karma Police\",\n          \"Do I Wanna Know?\",\n          \"Smells Like Teen Spirit\",\n          \"Chop Suey!\",\n          \"Seven Nation Army\",\n          \"Love Will Tear Us Apart\",\n          \"The Less I Know the Better\",\n          \"Intro\",\n          \"No Surprises\",\n          \"Where Is My Mind?\",\n          \"High and Dry\",\n          \"Just Like Heaven\",\n          \"Would?\",\n          \"The Passenger\",\n          \"Pretty Pimpin\",\n          \"Midnight City\",\n          \"Everlong\",\n          \"Crystalised\",\n          \"Losing My Religion\",\n          \"Cant Stop\",\n          \"Teardrop\",\n          \"Everything in Its Right Place\",\n          \"Highway to Hell\",\n          \"Cant Feel My Face\",\n          \"B.Y.O.B.\",\n          \"Paint It Black\",\n          \"Thunderstruck\",\n          \"Here Comes Your Man\",\n          \"Monkey Gone to Heaven\",\n          \"Hate To Say I Told You So\",\n          \"Stuck in the Middle With You\",\n          \"Alright\",\n          \"Feel the Pain\",\n          \"R U Mine?\",\n          \"Skinny Love\",\n          \"Under the Bridge\",\n          \"Lithium\",\n          \"Otherside\",\n          \"Enter Sandman\",\n          \"Nothing Else Matters\",\n          \"Heart-Shaped Box\",\n          \"Fake Plastic Trees\",\n          \"Friday Im in Love\",\n          \"Feels Like We Only Go Backwards\",\n          \"Bitter Sweet Symphony\",\n          \"Dont Stop Believin\",\n          \"Let It Happen\",\n          \"Young and Beautiful\",\n          \"Back in Black\"\n        ]\n      },\n      \"id\": \"AD\",\n      \"type\": \"countries\"\n    },\n    ...\n  ],\n  \"jsonapi\": { \"version\": \"1.0\" },\n  \"links\": {\n    \"first\": \"http://api.lyriccheck.me/countries?page[size]=10&page[number]=1\",\n    \"last\": \"http://api.lyriccheck.me/countries?page[size]=10&page[number]=21\",\n    \"next\": \"http://api.lyriccheck.me/countries?page[size]=10&page[number]=2\",\n    \"prev\": null,\n    \"self\": \"/countries\"\n  },\n  \"meta\": { \"total\": 207 }\n}\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "artists",
+      "item": [
+        {
+          "name": "Search for a single artist.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"https://api.lyriccheck.me/artists/cc197bad-dc9c-440d-a5b5-d52ba2e14234 test\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.ok;\r",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://api.lyriccheck.me/artists/:id",
+              "protocol": "https",
+              "host": ["api", "lyriccheck", "me"],
+              "path": ["artists", "cc197bad-dc9c-440d-a5b5-d52ba2e14234"],
+              "variable": [
+                {
+                  "description": "The id of the artist.",
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Searches for an artist with the id."
+          },
+          "response": [
+            {
+              "name": "Search for a single artist.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.lyriccheck.me/artists/cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+                  "protocol": "https",
+                  "host": ["api", "lyriccheck", "me"],
+                  "path": ["artists", "cc197bad-dc9c-440d-a5b5-d52ba2e14234"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/html"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "644"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 01 Mar 2022 02:50:26 GMT"
+                },
+                {
+                  "key": "Last-Modified",
+                  "value": "Tue, 01 Mar 2022 02:37:11 GMT"
+                },
+                {
+                  "key": "ETag",
+                  "value": "\"61af9a2915b1ee5dd6d4aa37880764f1\""
+                },
+                {
+                  "key": "x-amz-server-side-encryption",
+                  "value": "AES256"
+                },
+                {
+                  "key": "Accept-Ranges",
+                  "value": "bytes"
+                },
+                {
+                  "key": "Server",
+                  "value": "AmazonS3"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "public, max-age=0, s-maxage=2"
+                },
+                {
+                  "key": "X-Cache",
+                  "value": "RefreshHit from cloudfront"
+                },
+                {
+                  "key": "Via",
+                  "value": "1.1 fd75fbfcb817c64193ce6bd12a0df87c.cloudfront.net (CloudFront)"
+                },
+                {
+                  "key": "X-Amz-Cf-Pop",
+                  "value": "ORD53-C2"
+                },
+                {
+                  "key": "X-Amz-Cf-Id",
+                  "value": "NokW5LsXYpJYBJuTxdSyOe_Ic_SBjMBEN-MTPfj5chiDy44NGad-Iw=="
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"data\": {\n    \"attributes\": {\n      \"bio_content\": \"Coldplay is a British alternative rock and pop band formed in London in 1996. The band's singer/pianist Chris Martin, guitarist Jonny Buckland, bassist Guy Berryman and drummer Will Champion, met at University College London and came together from 1996 to 1998. During these two years, the band changed names from Pectoralz to Starfish and, finally, to Coldplay. Creative director and former manager Phil Harvey is often referred to as the fifth member by the band. They recorded and released two EPs: Safety in 1998 and The Blue Room in 1999. The latter was their first release on a major record label, after signing to Parlophone.\\n\\nColdplay achieved worldwide fame with the release of the song \\\"Yellow\\\" in 2000, followed in the same year by their debut album Parachutes, which was nominated for the Mercury Prize. The band's second album, A Rush of Blood to the Head (2002), was released to critical acclaim and won many awards, including NME's Album of the Year. Their next release, X&Y, the best-selling album worldwide in 2005, received mostly positive reviews, though some critics felt it was inferior to its predecessor. Their fourth studio album, Viva la Vida or Death and All His Friends (2008), the best-selling album worldwide of 2008, was produced by Brian Eno and released to largely positive reviews, earning three Grammy Awards. In October 2011, Coldplay released their fifth studio album, Mylo Xyloto, which topped the charts in over 34 countries, was the UK's best-selling rock album of 2011, and received moderately positive reviews. Their sixth album, Ghost Stories, released in 2014, received mixed reviews and topped several national album charts. The following year the band released their seventh album, A Head Full of Dreams, which reached the top two in most major markets, but received generally mixed reviews. Four years later, in November 2019, they released their eighth album, Everyday Life, which received mainly positive reviews.  \\n\\nTheir most recent work and ninth studio album, Music of the Spheres, is a space-themed album adding to Coldplay's extensive experimental discography. As of September 24, three singles from the album have been released: Higher Power, My Universe, and Coloratura, the latter of which being a ten-minute long prog rock journey. The full album releases on October 15, 2021. Further speculation regarding Coldplay's future has led fans to believe that two more \\\"volumes\\\" following Music of the Spheres will be released, due to extensive merchandising, music videos, and public statements terming this album \\\"Volume 1\\\". However, it is unclear as to what these future volumes may shape out to be. \\n\\nChris Martin and Jonny Buckland first met during their orientation week at University College London (UCL) in September 1996. The pair spent the rest of the university year planning a band, ultimately forming a group called Pectoralz. Guy Berryman, a classmate of Martin and Buckland, later joined the group. By 1997, the group, who had renamed themselves Starfish, performed gigs for local Camden promoters at small clubs. Martin also had recruited his longtime school friend Phil Harvey, who was studying classics at the University of Oxford, to be the band's manager. Coldplay have since accepted Harvey as the fifth member of the group. The band's line-up was completed when Will Champion joined to take up percussion duties. Champion had grown up playing piano, guitar, bass, and tin whistle; he quickly learned the drums (despite having no previous experience). The band finally settled on the name \\\"Coldplay\\\" which was suggested by Tim Crompton, a local student who had been using the name for his group.\\n\\nBy 1997, Martin had met Classics student Tim Rice-Oxley. During a weekend in the English village Virginia Water in Surrey they asked each other to play their own songs on the piano. Martin, finding Rice-Oxley to be talented, asked him to be Coldplay's keyboard player but Rice-Oxley refused as his own band, Keane, was already active. Days after, this event would shape the second line-up of Keane and keep Coldplay's unaltered, thus leaving both bands as quartets. In 1998, the band released 500 copies of the EP Safety. Most of the discs were given to record labels and friends; only 50 copies remained for sale to the public. In December of that year, Coldplay signed to the independent label Fierce Panda. Their first release was the single \\\"Brothers & Sisters\\\", which they had recorded over four days in February 1999.\\n\\nAfter completing their final examinations, Coldplay signed a five-album contract with Parlophone in early 1999. After making their first appearance at Glastonbury, the band went into the studio to record a second EP, titled The Blue Room. Five thousand copies were made available to the public in October, and the single \\\"Bigger Stronger\\\" received BBC Radio 1 airplay. The recording sessions for The Blue Room were tumultuous. Champion was briefly fired from the band, but Martin later pleaded with him to return after kicking him out, and because of his guilt, went on a drinking binge. Eventually, the band worked out their differences and put in place a new set of rules to keep the group intact. Inspired by bands like U2 and R.E.M., Coldplay decided that they would operate as a democracy. Additionally, the band determined they would fire anyone who used hard drugs.\\n\\nColdplay have won numerous awards throughout their career, including nine Brit Awards, six MTV Video Music Awards, seven MTV Europe Music Awards and seven Grammy Awards from 29 nominations. They have sold more than 100 million records worldwide, making them one of the world's best-selling music artists. Three of their albums\\u2014Parachutes, A Rush of Blood to the Head and X&Y\\u2014are among the best-selling albums in UK chart history. In December 2009, Rolling Stone readers voted the group the fourth-best artist of the 2000s. Coldplay have supported various social and political causes, such as Oxfam's Make Trade Fair campaign and Amnesty International. They have also performed at charity projects, including Band Aid 20, Live 8, Global Citizen Festival, Sound Relief, Hope for Haiti Now: A Global Benefit for Earthquake Relief, One Love Manchester, The Secret Policeman's Ball, Sport Relief and the UK Teenage Cancer Trust.\\n\\nColdplay's musical style has generally been regarded as alternative rock, pop rock, post-Britpop, and pop. Chris Martin once proclaimed the band's music as \\\"limestone rock\\\" in comparison to \\\"hard rock\\\". The band's music has been called \\\"meditative\\\" and \\\"blue romantic\\\"; it \\\"[reflects] on their emotions\\\" and Martin \\\"endlessly examine his feelings\\\". Coldplay started out as one of many earnest post-Britpop bands. In the late 1990s, the EPs released by the band had characteristics of dream pop, setting them apart from later studio albums. The tone of the band's first studio album Parachutes, which saw them emerge as one of the most prominent modern bands in popular music, was described as melodic pop with \\\"distorted guitar riffs and swishing percussion\\\" but also being \\\"exquisitely dark and artistically abrasive\\\". Their alternative rock style has been compared to bands like U2, Oasis, a-ha and Radiohead. The band acknowledges the Scottish rock band Travis as a major influence on their earlier material. <a href=\\\"https://www.last.fm/music/Coldplay\\\">Read more on Last.fm</a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.\",\n      \"bio_summary\": \"Coldplay is a British alternative rock and pop band formed in London in 1996. The band's singer/pianist Chris Martin, guitarist Jonny Buckland, bassist Guy Berryman and drummer Will Champion, met at University College London and came together from 1996 to 1998. During these two years, the band changed names from Pectoralz to Starfish and, finally, to Coldplay. Creative director and former manager Phil Harvey is often referred to as the fifth member by the band. <a href=\\\"https://www.last.fm/music/Coldplay\\\">Read more on Last.fm</a>\",\n      \"countries_popular_in\": [\n        \"UY\",\n        \"PY\",\n        \"GM\",\n        \"MQ\",\n        \"GU\",\n        \"GE\",\n        \"US\",\n        \"BZ\",\n        \"MU\",\n        \"LB\",\n        \"SA\",\n        \"EC\",\n        \"BR\",\n        \"UG\",\n        \"QA\",\n        \"TL\",\n        \"MN\",\n        \"CL\",\n        \"TW\",\n        \"AR\",\n        \"AT\",\n        \"GD\",\n        \"FO\",\n        \"MA\",\n        \"AI\",\n        \"PW\",\n        \"UA\",\n        \"CN\",\n        \"LS\",\n        \"CY\",\n        \"BD\",\n        \"ZA\",\n        \"GT\",\n        \"PR\",\n        \"AG\",\n        \"IL\",\n        \"KY\",\n        \"HR\",\n        \"IS\",\n        \"NA\",\n        \"GI\",\n        \"SN\",\n        \"OM\",\n        \"KW\",\n        \"AX\",\n        \"GB\",\n        \"HN\",\n        \"KH\",\n        \"PA\",\n        \"AD\",\n        \"TT\",\n        \"NG\",\n        \"PL\",\n        \"NC\",\n        \"ET\",\n        \"DE\",\n        \"AZ\",\n        \"NL\",\n        \"FR\",\n        \"NP\",\n        \"BB\",\n        \"JE\",\n        \"IN\",\n        \"IQ\",\n        \"IT\",\n        \"CU\",\n        \"BS\",\n        \"NO\",\n        \"LT\",\n        \"KE\",\n        \"SE\",\n        \"GP\",\n        \"GA\",\n        \"GG\",\n        \"RW\",\n        \"CA\",\n        \"DZ\",\n        \"IM\",\n        \"BW\",\n        \"KZ\",\n        \"VE\",\n        \"PF\",\n        \"SD\",\n        \"SK\",\n        \"LV\",\n        \"JM\",\n        \"RS\",\n        \"TO\",\n        \"HT\",\n        \"VU\",\n        \"BA\",\n        \"BO\",\n        \"MG\",\n        \"BH\",\n        \"GR\",\n        \"PE\",\n        \"SR\",\n        \"TH\",\n        \"YE\",\n        \"NZ\",\n        \"AM\",\n        \"PK\",\n        \"IE\",\n        \"PH\",\n        \"RO\",\n        \"DO\",\n        \"GH\",\n        \"MT\",\n        \"TR\",\n        \"EG\",\n        \"MZ\",\n        \"BE\",\n        \"SI\",\n        \"HU\",\n        \"AE\",\n        \"AL\",\n        \"SM\",\n        \"MD\",\n        \"EE\",\n        \"VC\",\n        \"BY\",\n        \"LK\",\n        \"SV\",\n        \"AU\",\n        \"BM\",\n        \"NI\",\n        \"TM\",\n        \"BF\",\n        \"CR\",\n        \"CM\",\n        \"ZM\",\n        \"LI\",\n        \"ME\",\n        \"LC\",\n        \"UZ\",\n        \"TD\",\n        \"AW\",\n        \"DK\",\n        \"JP\",\n        \"CV\",\n        \"CH\",\n        \"HK\",\n        \"BG\",\n        \"JO\",\n        \"TN\",\n        \"FI\",\n        \"ZW\",\n        \"MV\",\n        \"SG\",\n        \"MC\",\n        \"AO\",\n        \"MY\",\n        \"LU\"\n      ],\n      \"followers\": 34646286,\n      \"genre\": \"rock\",\n      \"image_url\": \"https://i.scdn.co/image/ab6761610000e5eb865a3301762a8fce048cb469\",\n      \"name\": \"Coldplay\",\n      \"popularity\": 91,\n      \"profanity_average\": 0.25980060973214286,\n      \"profanity_identity_attack\": 0.14414915892857147,\n      \"profanity_profanity\": 0.3535775542857142,\n      \"profanity_sexually_explicit\": 0.27073786285714285,\n      \"profanity_toxicity\": 0.27073786285714285,\n      \"similar_artists\": [\n        \"Keane\",\n        \"OneRepublic\",\n        \"Snow Patrol\",\n        \"Imagine Dragons\",\n        \"U2\"\n      ],\n      \"spotify_uri\": \"spotify:artist:4gzpq5DPGxSnKTe4SA8HAU\",\n      \"top_tracks_ids\": [\n        \"8b5bf478-22f8-4902-a1c1-0db82261db58\",\n        \"6cbbb97d-2180-4ba9-97a8-6158b6332bb4\",\n        \"13f5488d-8e41-42d8-9fe9-a5295f1a9a3d\",\n        \"ec87fef2-84cd-41b3-8642-38ce1b6962a6\",\n        \"3af0af54-9c93-4578-9128-d04054286ba3\",\n        \"fb81a071-9c63-4e8c-ab60-77403e81c01d\",\n        \"99754a32-9dbd-4e39-b6af-6fccb7b0789d\",\n        \"f6b0d094-f2c3-476c-b4cc-f354cb377929\",\n        \"cfaf1603-7c1b-4a96-8ce9-8d05567ecfe7\",\n        \"fe333925-ee6c-4292-ada5-35ae2ec1a36e\",\n        \"ba4bcf45-fcdf-4ff7-a19e-be3fdffae337\",\n        \"9cd3daca-eab7-4db8-8af8-21b3da550c28\",\n        \"6db295af-24ca-41a8-89df-628f6456e150\",\n        \"d99ffc1f-9819-4db1-8677-b13e298bd425\",\n        \"f559c598-76ec-4abc-80d9-86a9880cd446\",\n        \"fe9caa6d-00b3-4896-ba6e-32d9e5ba2118\",\n        \"fe33d06e-ffd4-4ad9-9474-023ac977d63e\",\n        \"0b778271-1901-472c-95fa-8996535e4c8f\",\n        \"1c7e1f6e-be0d-4d13-998a-75236bd3b47c\",\n        \"a89d3e81-cf59-4da2-a1ca-4d45811dabb7\",\n        \"73dd97f6-68a2-4dc9-a8e7-3819b1f38046\",\n        \"32e0e749-b832-4945-bf5f-5c6bf43c4223\",\n        \"31f8b043-c7f0-4455-ab06-38d403e3046a\",\n        \"bcc2987e-af16-40a2-b727-1756236f75ee\",\n        \"91a22120-1587-4226-8dd6-0dc2e35bae2d\",\n        \"aa994924-c33b-4e04-a66b-eb263acdd435\",\n        \"21a17652-d4c5-4403-bff4-2715e7c60022\",\n        \"53479dbd-bc21-4374-a4ba-e0b683324b88\",\n        \"78acc1da-e13f-4097-8eb6-86c3a3a4d535\",\n        \"50369905-68ca-48d2-912d-b37330ff7dc3\",\n        \"f67934a9-fdb1-4cdd-8e23-209b220f8a8d\",\n        \"f5397d07-358f-4d8b-9591-095d6d9f52a4\",\n        \"8939af10-d1d8-4ac7-ac13-1160a9cd1f54\",\n        \"b3a9b25f-79cb-4220-84fc-61ea900b8871\",\n        \"ac6aa976-06a4-4660-b87c-b304d0213d5e\",\n        \"c1afae76-7f93-4f98-94cd-513729ca63fd\",\n        \"df6590f3-949d-45bc-8437-550332061ee9\",\n        \"41e8b7d6-ad5c-47d7-a72d-290f4e2d1959\",\n        \"32dc9a9c-c936-4ec5-afe3-8320f5f096f3\",\n        \"5eaee471-7c3e-49ef-9dba-2f09b2d41fd3\",\n        \"551f064e-1682-4c94-b538-9407978a4f63\",\n        \"5abff09c-bc2d-49c5-a07a-f6e6bd3a7eef\",\n        \"186229ca-7bb2-4c98-9418-7df600aa31f6\",\n        \"24b9c8ee-ad12-4705-9e30-d2799a718dcc\",\n        \"5f1477de-7c23-4218-9e21-cc50f8b9384b\",\n        \"161d6e85-aaa6-4703-a35e-ee77f951f7d8\",\n        \"1a72b199-494e-4094-9c32-2dba71ddb0f2\",\n        \"f2a03739-b82f-410b-82dd-cfab7a44dc24\"\n      ],\n      \"top_tracks_names\": [\n        \"Yellow\",\n        \"Viva la Vida\",\n        \"The Scientist\",\n        \"Clocks\",\n        \"Fix You\",\n        \"Dont Panic\",\n        \"Trouble\",\n        \"In My Place\",\n        \"Speed of Sound\",\n        \"Paradise\",\n        \"Violet Hill\",\n        \"Talk\",\n        \"Shiver\",\n        \"Sparks\",\n        \"Green Eyes\",\n        \"God Put a Smile Upon Your Face\",\n        \"Life in Technicolor\",\n        \"Strawberry Swing\",\n        \"Warning Sign\",\n        \"Cemeteries of London\",\n        \"Politik\",\n        \"The Hardest Part\",\n        \"42\",\n        \"Parachutes\",\n        \"Lost!\",\n        \"A Message\",\n        \"A Sky Full of Stars\",\n        \"A Rush of Blood to the Head\",\n        \"Every Teardrop Is a Waterfall\",\n        \"Spies\",\n        \"Daylight\",\n        \"Amsterdam\",\n        \"Square One\",\n        \"What If\",\n        \"We Never Change\",\n        \"High Speed\",\n        \"White Shadows\",\n        \"Death and All His Friends\",\n        \"Swallowed in the Sea\",\n        \"Magic\",\n        \"A Whisper\",\n        \"princess of china\",\n        \"Low\",\n        \"Charlie Brown\",\n        \"Yes\",\n        \"Twisted Logic\",\n        \"Hymn for the Weekend\",\n        \"Adventure Of A Lifetime\",\n        \"Everythings Not Lost\",\n        \"Hurts Like Heaven\"\n      ],\n      \"views\": 455226274\n    },\n    \"id\": \"cc197bad-dc9c-440d-a5b5-d52ba2e14234\",\n    \"type\": \"artists\"\n  },\n  \"jsonapi\": { \"version\": \"1.0\" }\n}\n"
+            }
+          ]
+        },
+        {
+          "name": "List artists with filter/search.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"https://api.lyriccheck.me/artists/cc197bad-dc9c-440d-a5b5-d52ba2e14234 test\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.ok;\r",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://api.lyriccheck.me/artists?filter[object]&sort&page[number]",
+              "protocol": "https",
+              "host": ["api", "lyriccheck", "me"],
+              "path": ["artists"],
+              "query": []
+            },
+            "description": "Returns a list of artists that match the filters. If no filters are specified, returns all artists paginated."
+          },
+          "response": [
+            {
+              "name": "List artists with filter/search.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.lyriccheck.me/api/artists",
+                  "protocol": "https",
+                  "host": ["api", "lyriccheck", "me"],
+                  "path": ["api", "artists"]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": null,
+              "cookie": [],
+              "body": "{\n  \"data\": [\n    {\n      \"attributes\": {\n        \"album_id\": \"4ccca10d-45dd-31f7-8d34-ff97d09f8a2b\",\n        \"album_name\": \"Legend\",\n        \"artist_id\": \"ed2ac1e9-d51d-4eff-a2c2-85e81abd6360\",\n        \"artist_name\": \"Bob Marley & The Wailers\",\n        \"artist_spotify_id\": \"2QsynagSdAqZj3U9HgDzjD\",\n        \"countries_popular_in\": [\"UG\"],\n        \"description_content\": null,\n        \"description_summary\": null,\n        \"genre\": \"reggae\",\n        \"image_url\": \"https://i.scdn.co/image/ab67616d0000b273387799441ba867649dfbb702\",\n        \"lyrics\": \"Oh, please don't you rock my boat\\n(Don't rock my boat)\\n'Cause I don't want my boat to be rocking\\n(Don't rock my boat)\\nOh, please don't you rock my boat\\n(Don't rock my boat) No, no\\n'Cause I don't want my boat to be rocking\\n(Don't rock my boat)\\n\\nI'm telling you that, oh, oh, wa, whoa, wa, whoa\\nI like it, like it like this (I like it like this, I like it like this)\\nSo keep it steady, like this (I like it like this)\\nAnd you should know, you should know by now\\nI like it (I like it like this), I like it like this\\n(I like it like this, I like it like this)\\nI like it like this, ooh yeah (I like it like this)\\n\\nSatisfy my soul\\n...\\n\\n******* Th\",\n        \"name\": \"Satisfy My Soul\",\n        \"profanity_average\": 0.210034324,\n        \"profanity_identity_attack\": 0.119811416,\n        \"profanity_profanity\": 0.31162438,\n        \"profanity_sexually_explicit\": 0.20435075,\n        \"profanity_toxicity\": 0.20435075,\n        \"spotify_id\": \"5Uv1YNz6uBepPLDdoFANKQ\",\n        \"spotify_uri\": \"spotify:track:5Uv1YNz6uBepPLDdoFANKQ\",\n        \"views\": 1373020\n      },\n      \"id\": \"008977a9-ba2d-448f-8983-8d536ea0ef53\",\n      \"type\": \"songs\"\n    },\n    ...\n  ],\n  \"jsonapi\": { \"version\": \"1.0\" },\n  \"links\": {\n    \"first\": \"http://api.lyriccheck.me/songs?page[size]=10&page[number]=1\",\n    \"last\": \"http://api.lyriccheck.me/songs?page[size]=10&page[number]=124\",\n    \"next\": \"http://api.lyriccheck.me/songs?page[size]=10&page[number]=2\",\n    \"prev\": null,\n    \"self\": \"/songs\"\n  },\n  \"meta\": { \"total\": 1239 }\n}\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "songs",
+      "item": [
+        {
+          "name": "Search for a single song.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"https://api.lyriccheck.me/songs/a5a2330e-2fff-4601-a715-6e68a8e98fbf test\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.ok;\r",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://api.lyriccheck.me/songs/:id",
+              "protocol": "https",
+              "host": ["api", "lyriccheck", "me"],
+              "path": ["songs", "a5a2330e-2fff-4601-a715-6e68a8e98fbf"],
+              "variable": [
+                {
+                  "description": "The id of the song.",
+                  "key": "id",
+                  "value": ""
+                }
+              ]
+            },
+            "description": "Searches for a song with the id."
+          },
+          "response": [
+            {
+              "name": "Search for a single song.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.lyriccheck.me/songs/a5a2330e-2fff-4601-a715-6e68a8e98fbf",
+                  "protocol": "https",
+                  "host": ["api", "lyriccheck", "me"],
+                  "path": ["songs", "a5a2330e-2fff-4601-a715-6e68a8e98fbf"]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": null,
+              "cookie": [],
+              "body": "{\n  \"data\": {\n    \"attributes\": {\n      \"album_id\": \"a64a4946-21cf-4c22-b0b5-c992223de996\",\n      \"album_name\": \"I'm Yours\",\n      \"artist_id\": \"82eb8936-7bf6-4577-8320-a2639465206d\",\n      \"artist_name\": \"Jason Mraz\",\n      \"artist_spotify_id\": \"4phGZZrJZRo4ElhRtViYdl\",\n      \"countries_popular_in\": [\n        \"GU\",\n        \"BZ\",\n        \"TL\",\n        \"TW\",\n        \"AI\",\n        \"CN\",\n        \"KN\",\n        \"NC\",\n        \"GP\",\n        \"GA\",\n        \"GG\",\n        \"PF\",\n        \"ML\",\n        \"MG\",\n        \"TH\",\n        \"YE\",\n        \"PH\",\n        \"GH\",\n        \"MZ\",\n        \"YT\",\n        \"HK\",\n        \"SG\",\n        \"MC\",\n        \"AO\",\n        \"MY\"\n      ],\n      \"description_content\": \"First single from the album We Sing. We Dance. We Steal Things released in 2008. The original demo version of the song first appeared on the 2005 \\nAccording to the I'm Yours Songfacts, Mraz told The Sun newspaper that this song is about \\\"generosity. About giving yourself or your time to someone or something else.\\\"\\n\\n <a href=\\\"http://www.last.fm/music/Jason+Mraz/_/I%27m+Yours\\\">Read more on Last.fm</a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.\",\n      \"description_summary\": \"First single from the album We Sing. We Dance. We Steal Things released in 2008. The original demo version of the song first appeared on the 2005 \\nAccording to the I'm Yours Songfacts, Mraz told The Sun newspaper that this song is about \\\"generosity. About giving yourself or your time to someone or something else.\\\"\\n\\n <a href=\\\"http://www.last.fm/music/Jason+Mraz/_/I%27m+Yours\\\">Read more on Last.fm</a>.\",\n      \"genre\": \"acoustic\",\n      \"image_url\": \"https://i.scdn.co/image/ab67616d0000b273ac02b09ccf884345678f0fdd\",\n      \"lyrics\": \"Well, you done done me in, you bet I felt it\\nI tried to be chill, but you're so hot that I melted\\nI fell right through the cracks\\nNow I'm trying to get back\\n\\nBefore the cool done run out, I'll be givin' it my bestest\\nAnd nothing's gonna stop me but divine intervention\\nI reckon it's again my turn\\nTo win some or learn some\\n\\nBut I won't hesitate no more, no more\\nIt cannot wait, I'm yours\\nHmm (Hey, hey)\\n\\nWell, open up your mind and see like me\\nOpen up your plans and, damn, you're free\\nAnd look into your heart and you'll find love, love, love, love\\nListen to the music of the moment people dance and sing\\nWe're just one big family\\nAnd it's our God-forsaken right to be loved, loved, loved, loved, loved\\n\\nSo I won't hesitate no more, no more\\n...\\n\\n******* Th\",\n      \"name\": \"I'm Yours\",\n      \"profanity_average\": 0.38151046750000006,\n      \"profanity_identity_attack\": 0.08869863,\n      \"profanity_profanity\": 0.7352721,\n      \"profanity_sexually_explicit\": 0.35103557,\n      \"profanity_toxicity\": 0.35103557,\n      \"spotify_id\": \"5smPViFYtztTo7ww9gJXpD\",\n      \"spotify_uri\": \"spotify:track:5smPViFYtztTo7ww9gJXpD\",\n      \"views\": 12013373\n    },\n    \"id\": \"a5a2330e-2fff-4601-a715-6e68a8e98fbf\",\n    \"type\": \"songs\"\n  },\n  \"jsonapi\": { \"version\": \"1.0\" }\n}\n"
+            }
+          ]
+        },
+        {
+          "name": "List songs with filter/search.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"https://api.lyriccheck.me/songs test\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.ok;\r",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://api.lyriccheck.me/songs?filter[object]&sort&page[number]",
+              "protocol": "https",
+              "host": ["api", "lyriccheck", "me"],
+              "path": ["songs"],
+              "query": []
+            },
+            "description": "Returns a list of songs that match the filters. If no filters are specified, returns all songs paginated."
+          },
+          "response": [
+            {
+              "name": "List songs with filter/search.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "https://api.lyriccheck.me/songs",
+                  "protocol": "https",
+                  "host": ["api", "lyriccheck", "me"],
+                  "path": ["songs"]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": null,
+              "cookie": [],
+              "body": "[\n    {\n        \"name\": \"I'm Yours\",\n        \"id\": \"a5a2330e-2fff-4601-a715-6e68a8e98fbf\",\n        \"soundCloudId\": \"20718099\",\n        \"artist\": {\n            \"name\": \"Jason Mraz\",\n            \"id\": \"82eb8936-7bf6-4577-8320-a2639465206d\"\n        },\n        \"views\": \"11966373\",\n        \"genres\": [\n            \"acoustic\",\n            \"happy\",\n            \"singer-songwriter\",\n            \"Love\",\n            \"chill\"\n        ],\n        \"album\": {\n            \"name\": \"I'm Yours\",\n            \"id\": \"a64a4946-21cf-4c22-b0b5-c992223de996\"\n        },\n        \"profanityScore\": {\n            \"SEXUALLY_EXPLICIT\": 0.30397058,\n            \"SEVERE_TOXICITY\": 0.3072478,\n            \"IDENTITY_ATTACK\": 0.06877423,\n            \"PROFANITY\": 0.7532383\n        },\n        \"lyrics\": \"Well, you done done me in, you bet I felt it\\nI tried to be chill, but you're so hot that I melted\\nI fell right through the cracks\\nNow I'm trying to get back\\nBefore the cool done run out\\nI'll be giving it my bestest\\nAnd nothing's gonna stop me but divine intervention\\nI reckon it's again my turn\\nTo win some or learn some\\n\\nBut I won't hesitate no more, no more\\nIt cannot wait, I'm yours\\nHmm (hey, hey)\\n\\nWell, open up your mind and see like me\\nOpen up your plans and, damn, you're free\\nAnd look into your heart and you'll find love, love, love, love\\nListen to the music of the moment, people dance and sing\\nWe're just one big family\\nAnd it's our God-forsaken right to\",\n        \"description\": {\n            \"summary\": \"First single from the album We Sing. We Dance. We Steal Things released in 2008. The original demo version of the song first appeared on the 2005 \\nAccording to the I'm Yours Songfacts, Mraz told The Sun newspaper that this song is about \\\"generosity. About giving yourself or your time to someone or something else.\\\"\\n\\n <a href=\\\"http://www.last.fm/music/Jason+Mraz/_/I%27m+Yours\\\">Read more on Last.fm</a>.\",\n            \"content\": \"First single from the album We Sing. We Dance. We Steal Things released in 2008. The original demo version of the song first appeared on the 2005 \\nAccording to the I'm Yours Songfacts, Mraz told The Sun newspaper that this song is about \\\"generosity. About giving yourself or your time to someone or something else.\\\"\\n\\n <a href=\\\"http://www.last.fm/music/Jason+Mraz/_/I%27m+Yours\\\">Read more on Last.fm</a>. User-contributed text is available under the Creative Commons By-SA License; additional terms may apply.\"\n        }\n    }\n]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ]
+}

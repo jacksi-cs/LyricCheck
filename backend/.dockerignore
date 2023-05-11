@@ -1,0 +1,7 @@
+.git/
+.gitignore
+sql/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+.git
+.gitignore
