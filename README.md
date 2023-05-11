@@ -1,34 +1,8 @@
 # Lyric Check
-
-## Team 7 10am
-
-| Name | EID | GitLab ID |
-| --- | --- | --- |
-| Hassan Khan | hak658 | hakhan0301 |
-| Stacy Jong | svj284 | stacyvjong |
-| Jack Si | jks3395 | jacksi1 |
-| Kenji Nakachi | kbn365 | kenjinakachi |
-| Christopher Carrasco | cc66496 | guymanpersonboy |
-
-## Git SHA
-
-22a8ef73bb43369d31ff1930a0470e80ba2c50de
-
-## Project Leader
-
-### Responsibilities
-
-- Schedule meetings.
-- Share screen or host VSCode Live Share.
-- Monitor website health.
-- Review merge requests.
-
-### Phase Leader
-
-- Phase 1: Hassan Khan
-- Phase 2: Christopher Carrasco
-- Phase 3: Jack Si
-- Phase 4: Stacy Jong
+**RESTful APIs Used:** Perspective, Spotify, Last.FM, REST Countries, MusixMatch
+  
+  
+LyricCheck is a web based tool that consolidates data on top artists (monthly listeners), charting songs, artist bios, song lyrics, and a profanity score. Using Perspective's NLP model to grade song lyrics, it also provides insight on the profanity preferences over time, based on location, and based on artists. There are sites that tackle one or even part of one responsibility that we hope our project will accomplish, but there are severe patches of information missing from each. By also making use of a profanity grade, our project can provide valuable insight into the worrying NSFW trend of modern day pop culture.
 
 ## GitLab Pipelines
 
@@ -37,74 +11,6 @@ https://gitlab.com/kenjinakachi/lyriccheck/-/pipelines
 ## Website Link
 
 https://www.lyriccheck.me
-
-## Estimated Completion Time for Each Member
-
-### Phase 1
-
-- Hassan Khan: 10 hours
-- Stacy Jong: 12 hours
-- Jack Si: 12 hours
-- Kenji Nakachi: 10 hours
-- Christopher Carrasco: 15 hours
-
-### Phase 2
-
-- Hassan Khan: 16 hours
-- Stacy Jong: 18 hours
-- Jack Si: 20 hours
-- Kenji Nakachi: 15 hours
-- Christopher Carrasco: 18 hours
-
-### Phase 3
-
-- Hassan Khan: 12 hours
-- Stacy Jong: 12 hours
-- Jack Si: 12 hours
-- Kenji Nakachi: 12 hours
-- Christopher Carrasco: 12 hours
-
-### Phase 4
-
-- Hassan Khan: 6 hours
-- Stacy Jong: 6 hours
-- Jack Si: 6 hours
-- Kenji Nakachi: 6 hours
-- Christopher Carrasco: 6 hours
-
-## Actual Completion Time for Each Member
-
-### Phase 1
-
-- Hassan Khan: 16 hours
-- Stacy Jong: 15 hours
-- Jack Si: 16 hours
-- Kenji Nakachi: 15 hours
-- Christopher Carrasco: 14 hours
-
-### Phase 2
-
-- Hassan Khan: 20 hours
-- Stacy Jong: 21 hours
-- Jack Si: 21 hours
-- Kenji Nakachi: 20 hours
-- Christopher Carrasco: 20 hours
-
-### Phase 3
-
-- Hassan Khan: 15 hours
-- Stacy Jong: 14 hours
-- Jack Si: 15 hours
-- Kenji Nakachi: 13 hours
-- Christopher Carrasco: 15 hours
-
-### Phase 4
-
-- Hassan Khan: 5 hours
-- Stacy Jong: 4 hours
-- Jack Si: 4 hours
-- Kenji Nakachi: 3 hours
-- Christopher Carrasco: 4 hours
 
 ## Comments
 
